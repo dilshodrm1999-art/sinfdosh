@@ -20,7 +20,22 @@ Telegram + Facebook uslubidagi zamonaviy ijtimoiy tarmoq. Hudud → maktab → s
 
 ---
 
-## 🚀 Tezkor ishga tushirish (Docker)
+## ☁️ GitHub Codespaces'da bir bosishda ishga tushirish
+
+Hech narsa o'rnatmasdan, to'g'ridan-to'g'ri brauzerda:
+
+1. Repo sahifasida **`< > Code` → Codespaces → Create codespace on main** ni bosing
+   (yoki to'g'ridan-to'g'ri havola: `https://codespaces.new/dilshodrm1999-art/sinfdosh`)
+2. Muhit ochilgach, hamma narsa **avtomatik** quriladi va ishga tushadi (`.devcontainer/setup.sh`).
+3. Pastda **Ports** tabida `3000`-port havolasini oching — veb ilova tayyor!
+
+> Agar API ishlamasa: **Ports** tabida `8000`-port "Visibility" ni **Public** ga o'zgartiring.
+
+**Demo login:** `+998901111111` / `demo12345`
+
+---
+
+## 🚀 Tezkor ishga tushirish (Docker, lokal)
 
 Talab: **Docker** va **Docker Compose** o'rnatilgan bo'lishi kerak.
 

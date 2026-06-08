@@ -1,0 +1,26 @@
+{
+  "name": "Sinfdosh",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [3000, 8000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Sinfdosh Frontend",
+      "onAutoForward": "openPreview",
+      "visibility": "public"
+    },
+    "8000": {
+      "label": "Sinfdosh Backend API",
+      "visibility": "public"
+    }
+  },
+  "onCreateCommand": "bash .devcontainer/setup.sh",
+  "postStartCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "dbaeumer.vscode-eslint"]
+    }
+  }
+}

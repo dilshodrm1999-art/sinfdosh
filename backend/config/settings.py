@@ -22,6 +22,8 @@ DEBUG = env_bool("DJANGO_DEBUG", True)
 ALLOWED_HOSTS = os.getenv(
     "DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1,backend"
 ).split(",")
+# GitHub Codespaces forwarded domenlari
+ALLOWED_HOSTS += [".app.github.dev"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -155,6 +157,12 @@ SIMPLE_JWT = {
 
 # CORS
 FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:3000")
-CORS_ALLOWED_ORIGINS = [FRONTEND_ORIGIN]
+CORS_ALLOWED_ORIGINS = [
+    o.strip()
+    for o in os.getenv("CORS_ALLOWED_ORIGINS", FRONTEND_ORIGIN).split(",")
+    if o.strip()
+]
+# GitHub Codespaces forwarded URL'lariga ruxsat (https://*-3000.app.github.dev)
+CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.app\.github\.dev$"]
 CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS = [FRONTEND_ORIGIN]
+CSRF_TRUSTED_ORIGINS = list(CORS_ALLOWED_ORIGINS) + ["https://*.app.github.dev"]
